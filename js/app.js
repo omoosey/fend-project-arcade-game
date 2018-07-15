@@ -11,13 +11,15 @@
 class Enemy {
     constructor(){
         this.x = 0;
-        this.y = 1;
+        this.y = 380;
         this.sprite = 'images/enemy-bug.png';
     }
     update(dt){
-
+        (this.x += 10) * dt;
+        if (this.x > 505) {
+            this.x = -101;
+        }
     }
-
     render(){
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
@@ -48,7 +50,7 @@ class Player {
     render(){
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
-    update(dt){
+    update(){
 
     }
     handleInput(key){
