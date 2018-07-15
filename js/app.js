@@ -70,7 +70,10 @@ class Player {
             this.x = 0;
         } else if (this.x > 404){
             this.x = 404;
-
+        } else if (this.y < 0) {
+            this.y = 0;
+        } else if (this.y > 415){
+            this.y = 415;
         }
     }
 } 
