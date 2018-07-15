@@ -16,6 +16,8 @@ class Enemy {
     constructor(speed, x, y){
         this.x = x;
         this.y = y;
+        this.row = 0;
+        this.col = 0;
         this.speed = speed;
         this.sprite = 'images/enemy-bug.png';
     }
@@ -25,6 +27,30 @@ class Enemy {
             this.x = -202;
             this.speed = speedValues[Math.floor(Math.random() * speedValues.length)];
             this.y = yPositions[Math.floor(Math.random() * yPositions.length)];
+        }
+
+        if (this.x > 0 && this.x < 101) {
+            this.col = 1;
+        } else if (this.x > 101 && this.x < 202){
+            this.col = 2;
+        } else if (this.x > 202 && this.x < 303){
+            this.col = 3;
+        } else if (this.x > 303 && this.x < 404){
+            this.col = 4;
+        } else if (this.x > 505 && this.x < 505){
+            this.col = 5;
+        } else {
+            this.col = 0;
+        }
+
+        if (this.y === 83){
+            this.row = 1;
+        } else if (this.y === 166){
+            this.row = 2;
+        } else if (this.y === 249){
+            this.row = 3;
+        } else {
+            this.row = 0;
         }
     }
     render(){
@@ -52,12 +78,37 @@ class Player {
     constructor(){
         this.x = 202;
         this.y = 415;
+        this.col = 0;
+        this.row = 0;
         this.sprite = 'images/char-boy.png';
     }
     render(){
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
     update(){
+        if (this.x === 0){
+            this.col = 1;
+        } else if (this.x === 101){
+            this.col = 2;
+        } else if (this.x === 202){
+            this.col = 3;
+        } else if (this.x === 303){
+            this.col = 4;
+        } else if (this.x === 404){
+            this.col = 5;
+        } else {
+            this.col = 0;
+        }
+
+        if (this.y === 83){
+            this.row = 1;
+        } else if (this.y === 166){
+            this.row = 2;
+        } else if (this.y === 249){
+            this.row = 3;
+        } else {
+            this.row = 0;
+        }
 
     }
     handleInput(key){
