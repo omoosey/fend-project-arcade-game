@@ -8,6 +8,9 @@
 //     this.sprite = 'images/enemy-bug.png';
 // };
 
+const speedValues = [3, 3.5, 4, 4.5, 5, 5.5, 6];
+const yPositions = [83, 166, 249];
+
 class Enemy {
     //add speed variable
     constructor(speed, x, y){
@@ -18,8 +21,10 @@ class Enemy {
     }
     update(dt){
         (this.x += this.speed) * dt;
-        if (this.x > 505) {
-            this.x = -101;
+        if (this.x > 606) {
+            this.x = -202;
+            this.speed = speedValues[Math.floor(Math.random() * speedValues.length)];
+            this.y = yPositions[Math.floor(Math.random() * yPositions.length)];
         }
     }
     render(){
@@ -88,13 +93,12 @@ class Player {
 
 const player = new Player();
 let allEnemies = [];
-const speedValues = [3, 4, 5, 6];
-const yPositions = [83, 166, 249];
 
-for (let i = 0; i <= 5; i++){
+
+for (let i = 0; i < 3; i++){
     let speed = speedValues[Math.floor(Math.random() * speedValues.length)];
     let y = yPositions[Math.floor(Math.random() * yPositions.length)];
-    allEnemies[i] = new Enemy(speed, 0, y);
+    allEnemies[i] = new Enemy(speed, -101, y);
 }
 
 
