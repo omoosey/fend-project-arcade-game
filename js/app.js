@@ -87,8 +87,20 @@ class Player {
 // Place the player object in a variable called player
 
 const player = new Player();
-const enemy = new Enemy(5, 0, 166);
-let allEnemies = [enemy];
+let allEnemies = [];
+const speedValues = [3, 4, 5, 6];
+const yPositions = [83, 166, 249];
+
+for (let i = 0; i <= 5; i++){
+    let speed = speedValues[Math.floor(Math.random() * speedValues.length)];
+    let y = yPositions[Math.floor(Math.random() * yPositions.length)];
+    allEnemies[i] = new Enemy(speed, 0, y);
+}
+
+const enemy1 = new Enemy(3, 0, 166);
+const enemy2 = new Enemy(5, 0, 83);
+const enemy3 = new Enemy(4, 0, 249);
+
 
 
 // This listens for key presses and sends the keys to your
