@@ -97,11 +97,6 @@ for (let i = 0; i <= 5; i++){
     allEnemies[i] = new Enemy(speed, 0, y);
 }
 
-const enemy1 = new Enemy(3, 0, 166);
-const enemy2 = new Enemy(5, 0, 83);
-const enemy3 = new Enemy(4, 0, 249);
-
-
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
