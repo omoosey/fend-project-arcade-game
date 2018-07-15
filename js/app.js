@@ -9,13 +9,15 @@
 // };
 
 class Enemy {
-    constructor(){
-        this.x = 0;
-        this.y = 380;
+    //add speed variable
+    constructor(speed, x, y){
+        this.x = x;
+        this.y = y;
+        this.speed = speed;
         this.sprite = 'images/enemy-bug.png';
     }
     update(dt){
-        (this.x += 10) * dt;
+        (this.x += this.speed) * dt;
         if (this.x > 505) {
             this.x = -101;
         }
@@ -85,7 +87,7 @@ class Player {
 // Place the player object in a variable called player
 
 const player = new Player();
-const enemy = new Enemy();
+const enemy = new Enemy(5, 0, 166);
 let allEnemies = [enemy];
 
 
