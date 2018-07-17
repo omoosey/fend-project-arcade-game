@@ -29,15 +29,17 @@ class Enemy {
             this.y = yPositions[Math.floor(Math.random() * yPositions.length)];
         }
 
-        if (this.x > 0 && this.x < 101) {
+        // column property updated based on x position
+        // divided width of image to find proper column
+        if (this.x > 0 && this.x < 50.5) {
             this.col = 1;
-        } else if (this.x > 101 && this.x < 202){
+        } else if (this.x > 50.5 && this.x < 151.5){
             this.col = 2;
-        } else if (this.x > 202 && this.x < 303){
+        } else if (this.x > 151.5 && this.x < 252.5){
             this.col = 3;
-        } else if (this.x > 303 && this.x < 404){
+        } else if (this.x > 252.5 && this.x < 353.5){
             this.col = 4;
-        } else if (this.x > 505 && this.x < 505){
+        } else if (this.x > 353.5 && this.x < 454.5){
             this.col = 5;
         } else {
             this.col = 0;
@@ -52,6 +54,7 @@ class Enemy {
         } else {
             this.row = 0;
         }
+        console.log(this.x, this.col);
     }
     render(){
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
@@ -146,7 +149,7 @@ const player = new Player();
 let allEnemies = [];
 
 
-for (let i = 0; i < 3; i++){
+for (let i = 0; i < 5; i++){
     let speed = speedValues[Math.floor(Math.random() * speedValues.length)];
     let y = yPositions[Math.floor(Math.random() * yPositions.length)];
     allEnemies[i] = new Enemy(speed, -101, y);

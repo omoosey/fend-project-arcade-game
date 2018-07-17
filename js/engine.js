@@ -85,7 +85,6 @@ var Engine = (function(global) {
     function checkCollisions(){
         allEnemies.forEach(function(enemy){
             if (enemy.col === player.col && enemy.row === player.row){
-                console.log("COLLISION!");
                 player.x = 202;
                 player.y = 415;
             }
