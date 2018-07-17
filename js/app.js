@@ -12,7 +12,7 @@ const speedValues = [3, 3.5, 4, 4.5, 5, 5.5, 6];
 const yPositions = [83, 166, 249];
 
 class Enemy {
-    //add speed variable
+    // add speed variable
     constructor(speed, x, y){
         this.x = x;
         this.y = y;
@@ -23,6 +23,7 @@ class Enemy {
     }
     update(dt){
         (this.x += this.speed) * dt;
+        // Reset x, y, and speed values when an enemy goes out of bounds        
         if (this.x > 606) {
             this.x = -202;
             this.speed = speedValues[Math.floor(Math.random() * speedValues.length)];
@@ -45,6 +46,7 @@ class Enemy {
             this.col = 0;
         }
 
+        // row property updated based on y position
         if (this.y === 249){
             this.row = 1;
         } else if (this.y === 166){
@@ -89,6 +91,7 @@ class Player {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
     update(){
+        // Update col and row properties based on x and y
         if (this.x === 0){
             this.col = 1;
         } else if (this.x === 101){
@@ -117,6 +120,8 @@ class Player {
         console.log(this.y);
 
     }
+
+    // Move character depending on key press
     handleInput(key){
         switch(key) {
             case 'left':
@@ -132,6 +137,8 @@ class Player {
                 this.y += 83;
                 break;
         }
+
+        // Stop character from moving out of bounds
         if(this.x < 0){
             this.x = 0;
         } else if (this.x > 404){
@@ -151,7 +158,7 @@ class Player {
 const player = new Player();
 let allEnemies = [];
 
-
+// Randomly create 5 enemies
 for (let i = 0; i < 5; i++){
     let speed = speedValues[Math.floor(Math.random() * speedValues.length)];
     let y = yPositions[Math.floor(Math.random() * yPositions.length)];

@@ -83,11 +83,12 @@ var Engine = (function(global) {
         checkWin();
     }
 
+    // Compares col and row of both enemy and player to determine collision
+
     function checkCollisions(){
         allEnemies.forEach(function(enemy){
             if (enemy.col === player.col && enemy.row === player.row){
-                player.x = 202;
-                player.y = 415;
+                reset();
             }
         });
 
@@ -167,15 +168,13 @@ var Engine = (function(global) {
         player.render();
     }
 
-    /* This function does nothing but it could have been a good place to
-     * handle game reset states - maybe a new game menu or a game over screen
-     * those sorts of things. It's only called once by the init() method.
-     */
+    // Resets player position
     function reset() {
         player.x = 202;
         player.y = 415;
     }
 
+    // Determines if a player wins the game and creates alert telling so
     function checkWin(){
         if (player.row === 4){
             alert('You have won the game!');
