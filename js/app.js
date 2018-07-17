@@ -106,6 +106,8 @@ class Player {
             this.row = 2;
         } else if (this.y === 249){
             this.row = 3;
+        } else if (this.y === 332) {
+            this.row = 4;
         } else {
             this.row = 0;
         }
