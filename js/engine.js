@@ -161,7 +161,8 @@ var Engine = (function(global) {
      * those sorts of things. It's only called once by the init() method.
      */
     function reset() {
-        
+        player.x = 202;
+        player.y = 415;
     }
 
     /* Go ahead and load all of the images we know we're going to need to
