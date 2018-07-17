@@ -80,6 +80,7 @@ var Engine = (function(global) {
     function update(dt) {
         updateEntities(dt);
         checkCollisions();
+        checkWin();
     }
 
     function checkCollisions(){
@@ -89,6 +90,7 @@ var Engine = (function(global) {
                 player.y = 415;
             }
         });
+
     }
 
     /* This is called by the update function and loops through all of the
@@ -170,8 +172,14 @@ var Engine = (function(global) {
      * those sorts of things. It's only called once by the init() method.
      */
     function reset() {
+        player.x = 202;
+        player.y = 415;
+    }
+
+    function checkWin(){
         if (player.row === 4){
-            alert("You avoided all the bugs and made it to the lake!");
+            alert('You have won the game!');
+            reset();
         }
     }
 
