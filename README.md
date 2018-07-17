@@ -7,9 +7,9 @@
 
 ## Instructions
 
-To get started playing the game load the index page. The enemies (bugs) will randomly created/rendered and the player (boy) will be placed in the starting position. 
+To get started playing the game load the index page. The enemies (bugs) will randomly be created/rendered and the player (boy) will be placed in the starting position. 
 
-Move the her to the top row to win the game. To move the player use the arrow keys.
+Move the player to the top row to win the game. To move the player use the arrow keys.
 
 ## Authors
 
