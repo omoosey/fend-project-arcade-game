@@ -79,6 +79,7 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
+        checkWin();
         // checkCollisions();
     }
 
@@ -163,6 +164,13 @@ var Engine = (function(global) {
     function reset() {
         player.x = 202;
         player.y = 415;
+    }
+
+    function checkWin(){
+        if (player.row === 4){
+            alert('You have won the game!');
+            reset();
+        }
     }
 
     /* Go ahead and load all of the images we know we're going to need to
