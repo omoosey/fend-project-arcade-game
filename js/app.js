@@ -43,11 +43,11 @@ class Enemy {
             this.col = 0;
         }
 
-        if (this.y === 83){
+        if (this.y === 249){
             this.row = 1;
         } else if (this.y === 166){
             this.row = 2;
-        } else if (this.y === 249){
+        } else if (this.y === 83){
             this.row = 3;
         } else {
             this.row = 0;
@@ -100,17 +100,18 @@ class Player {
             this.col = 0;
         }
 
-        if (this.y === 83){
+        if (this.y === 249) {
             this.row = 1;
-        } else if (this.y === 166){
+        } else if (this.y === 166) {
             this.row = 2;
-        } else if (this.y === 249){
+        } else if (this.y === 83) {
             this.row = 3;
-        } else if (this.y === 332) {
+        } else if (this.y === 0) {
             this.row = 4;
         } else {
             this.row = 0;
         }
+        console.log(this.y);
 
     }
     handleInput(key){
