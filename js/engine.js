@@ -161,9 +161,7 @@ var Engine = (function(global) {
      * those sorts of things. It's only called once by the init() method.
      */
     function reset() {
-        if (player.row === 4){
-            alert("You avoided all the bugs and made it to the lake!");
-        }
+        
     }
 
     /* Go ahead and load all of the images we know we're going to need to
